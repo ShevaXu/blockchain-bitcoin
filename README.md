@@ -94,7 +94,7 @@ Difficulty: *10min/block* (adopted every two weeks, see the [trend](https://bitc
 	- Individuals should have lost money ... but bitcoin price is rising
 - Professional mining centers (img &copy; [BitFury](http://bitfury.com/products#container-datacenter))
 
-<img src="http://bitfury.com/products/icblockbox_2.jpg" width="490px">
+<img alt="mining center" src="http://bitfury.com/products/icblockbox_2.jpg" width="490px">
 
 Energy:
 
@@ -127,6 +127,64 @@ Game-theoritic, strategic decisions:
 - Punitive-forking, feather-forking (blacklist tx from *X*, or negotiate tx fee)
 
 > Miners are free to implement any strategy but little non-default behaviours in the wild so far.
+
+## Week 6
+
+`anonymity = pseudonymity + unlinkability`
+
+Complete unlinkability is hard (only anomymity set)
+
+* link different addresses of the same user
+* link different transactions of the same user
+* link sender of a payment to its recipient
+
+Anonymity vs decentralization
+
+* Interactive protocal with bank (e.g., blind signature) are hard to decentralize
+* Decentralization often achieved via public traceability to enforce security
+
+> Best practice: always receive at fresh address
+
+* Application-layer de-anonymization
+	- Shared spending is evidence of joint control ([An Analysis of Anonymity in the Bitcoin System](https://arxiv.org/abs/1107.4524) and its [blog](http://anonymity-in-bitcoin.blogspot.com/))
+	- Change address - idioms of use ([A fistful of Bitcoins](http://cacm.acm.org/magazines/2016/4/200174-a-fistful-of-bitcoins/fulltext) and related  [blog](https://blog.acolyer.org/2017/02/20/a-fistful-of-bitcoins-characterizing-payments-among-men-with-no-names/))
+* Network-layer de-anonymization (first node to infrom)
+
+[Tor](https://www.torproject.org/) - anonymous communication (layered encryption)
+
+- [Hidden services](https://www.torproject.org/docs/hidden-services.html.en) - silk road
+
+### Mixing
+
+- intermediary - online wallet requires trust
+- delicated mixing services (no records \& identities, ~~laundry~~)
+	- use a series of mixes (standard API)
+	- uniform transactions (chunk size)
+	- automated client
+	- all-or-nothing fee
+- currently no reputable delicated mix
+- decentralized mixing - [CoinJoin](https://en.wikipedia.org/wiki/CoinJoin)
+	- finding peers: using untrusted server
+	- peer anonymity: routing
+	- denial of service: *CoinShuffle* [pdf](https://petsymposium.org/2014/papers/Ruffing.pdf)
+- high-level flows/patterns can be recognized - :bulb: *merge avoidance*
+
+<img alt="coinjoin example" src="https://en.wikipedia.org/wiki/File:CoinJoinExample.svg" width="500px">
+
+[**Zerocoin**](http://zerocoin.org/) - protocol-level mixing
+
+- Cryptographic guaranteen of mixing (not Bitcoin-compatible)
+- Extension of Basecoin (Bitcoin-like Altcoin)
+- [Zero-knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof): minting/commitment
+- [*Zerocash*](http://zerocash-project.org/): without basecoin - ledger/blockchain merely records existance of transactions
+
+System | Type | Attacks | Deployability |
+---|---|---|---
+Bitcoin|Pseudonymous|Tx graph analysis|Default
+Single Mix|Mix|Tx graph analysis, bad mix|Usable today
+Mix chain|Mix|Side channels, bad mixes/peers|Bitcoin-compatible
+Zerocoin|Cryptographic mix|Side channel (possibly)|Altcoin
+Zerocash|Untraceable|None|Altcoin, tricky setup
 
 ## Show Me the Codes
 
