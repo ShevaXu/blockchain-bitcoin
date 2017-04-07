@@ -169,8 +169,6 @@ Anonymity vs decentralization
 	- denial of service: *CoinShuffle* [pdf](https://petsymposium.org/2014/papers/Ruffing.pdf)
 - high-level flows/patterns can be recognized - :bulb: *merge avoidance*
 
-<img alt="coinjoin example" src="https://en.wikipedia.org/wiki/File:CoinJoinExample.svg" width="500px">
-
 [**Zerocoin**](http://zerocoin.org/) - protocol-level mixing
 
 - Cryptographic guaranteen of mixing (not Bitcoin-compatible)
@@ -186,13 +184,67 @@ Mix chain|Mix|Side channels, bad mixes/peers|Bitcoin-compatible
 Zerocoin|Cryptographic mix|Side channel (possibly)|Altcoin
 Zerocash|Untraceable|None|Altcoin, tricky setup
 
-## Show Me the Codes
+## Week 7
 
-* https://github.com/bitcoin/bitcoin (Go) - *Bitcoin* source code.
+Consensus about:
+
+- Rules - what's valid; protocols and formats `<-` *core developers*
+- History - content on the blockchain `<-` *miners*
+- Coins are valuable (any currency needs this) - [Tinkerbell effect](https://en.wikipedia.org/wiki/Tinkerbell_effect) `<-` investors, merchants, customers \& payment services
+
+[Bitcoin Core Software](https://github.com/bitcoin/bitcoin) (*Go, MIT*) - the de facto rule book of *Bitcoin*
+
+[Bitcoin Improvement Proposals](https://github.com/bitcoin/bips) - the process
+
+If you don't like the rules, you have
+
+- right to fork (more enpowering) `>` right to exit (centralized currencies)
+- after a hard fork:
+	- start an altcoin `->` co-exist nicely
+	- start a fight: market share, "real Bitcoin"
+
+Nobody/everybody controls Bitcoin. (But [Bitcoin foundation](https://bitcoinfoundation.org/) pays the core developers and talks to governments.)
+
+[Cypherpunk](https://en.wikipedia.org/wiki/Cypherpunk) -> [*Bitcoin: A Peer-to-Peer Electronic Cash System*](https://bitcoin.org/bitcoin.pdf) 2008 by [*Satoshi Nakamoto*](https://en.wikipedia.org/wiki/Satoshi_Nakamoto), a yet unknown person.
+
+### Governments
+
+Untraceable digital cash 
+
+- defeats capital controls (flowing in/out country) - counter-measure is to disconnect from fiat currency
+- facilitates some crimes, when it's easier to move money around (e.g., *Silk-Road*)
+
+Anti money-laundering - Know Your Customer (KYC), reporting transcations
+
+> Regulation might be good.
+
+Regulation can address the failure of market (e.g. [Lemons market](https://en.wikipedia.org/wiki/The_Market_for_Lemons), or [price fixing](https://en.wikipedia.org/wiki/Price_fixing))
+
+- market-based approaches: seller reputation, warranties
+- regulations
+	- required disclosure, with penlaty for lying
+	- quality standard with enforcement
+	- required warranties with enforcement
+
+[BitLicense](https://en.wikipedia.org/wiki/BitLicense) of New York came into effect on August 8, 2015.
+
+## Misc
+
+Applications
+
+* [Ethereum](https://www.ethereum.org/) - decentralized platform that runs smart contracts. (Official Go implementation of the Ethereum [protocol](https://github.com/ethereum/go-ethereum).
+* [IPFS](https://ipfs.io/) - A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
+* [Matrix](http://matrix.org/) - An open network for secure, decentralized communication.
+* [MaidSafe](https://maidsafe.net/) - Safe network.
+* [Syncthing](https://syncthing.net/) - Open Source Continuous File Synchronization.
+* [WebTorrent](https://webtorrent.io/) - Torrents on the web.
+* [ZeroNet](https://github.com/HelloZeroNet/ZeroNet) - Decentralized websites using Bitcoin crypto and BitTorrent network.
+
+Codes
+
 * https://github.com/lhartikk/naivechain (JS) - See this [blog](https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54#.4mdlna763).
 * https://github.com/IBM-Blockchain/learn-chaincode (Go) - Learn how to write chaincode.
 * https://github.com/chain/chain (Go) - Chain Core Developer Edition.
-* https://github.com/ethereum/go-ethereum (Go) - *Ethereum* protocol (for the blockchain platform).
 
 Info APIs
 
