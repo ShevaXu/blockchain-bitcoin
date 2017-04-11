@@ -192,7 +192,7 @@ Consensus about:
 - History - content on the blockchain `<-` *miners*
 - Coins are valuable (any currency needs this) - [Tinkerbell effect](https://en.wikipedia.org/wiki/Tinkerbell_effect) `<-` investors, merchants, customers \& payment services
 
-[Bitcoin Core Software](https://github.com/bitcoin/bitcoin) (*Go, MIT*) - the de facto rule book of *Bitcoin*
+[Bitcoin Core Software](https://github.com/bitcoin/bitcoin) (*C++, MIT*) - the de facto rule book of *Bitcoin*
 
 [Bitcoin Improvement Proposals](https://github.com/bitcoin/bips) - the process
 
@@ -228,7 +228,65 @@ Regulation can address the failure of market (e.g. [Lemons market](https://en.wi
 
 [BitLicense](https://en.wikipedia.org/wiki/BitLicense) of New York came into effect on August 8, 2015.
 
+## Week 8
+
+Puzzle requirements:
+
+- Cheap to verify
+- Adjustable difficulty
+
+ASIC resistant:
+
+- Lower barrier to entry
+- Prevent dominance
+
+:bulb: Memory hard puzzle (performance gap between processor \& memory) `->`
+[Scrypt](https://en.wikipedia.org/wiki/Scrypt)
+
+- Constant time, memory tradeoff
+- Most widely used alternative Bitcoin puzzle (also used in security, password-hashing)
+	1. fill memory with random values
+	2. read from the memory with random order
+- disadvantages: require `N` steps and `N` memory blocks
+- others:
+	- [Cuckoo hashing cycles](https://en.wikipedia.org/wiki/Cuckoo_hashing#Cycle)
+	- X11/Dash [wiki](https://en.wikipedia.org/wiki/Dash_(cryptocurrency)), [website](https://www.dash.org/x11/)
+
+*Updates*: [AsicBoost](https://www.asicboost.com/) and its [problem](http://www.mit.edu/~jlrubin//public/pdfs/Asicboost.pdf)
+
+Non-outsourceable puzzle - encouraging vigilante attacks (submit shares but discard/keep blocks)
+
+> Large mining pools are a threat.
+
+### Proof-of-Useful-Work
+
+*Bitcoin mining is extreamly wasteful.*
+
+- Recovering power
+	- Natural choices `->` protein folding, searching aliens - but *who chooses the problem?* (the benefit must be a pure public good; so far limited)
+	- [Primecoin](https://en.wikipedia.org/wiki/Primecoin) - finding large prime numbers (Cunningham chain)
+- Recovering hardware
+	- [Permacoin](https://en.wikipedia.org/wiki/Proof-of-Space#Permacoin) - storage based puzzle (proof-of-space)
+
+### Proof-of-Stake "Virtual Mining"
+
+Bitcoin mining has a unnecessary step -> spend money on power and equipment (the "actual" mining)
+
+- lower overall costs
+- stakeholder incentives - good stewards?
+- no ASIC advantage
+- 51% attack prevention
+
+> Is there any security that can only be gained by consuming "real" resources?
+
+Still open question, see the [news](http://virtualmining.com/).
+
 ## Misc
+
+Altcoins/Alternate cryptocurrencies:
+
+- [Market Capitalizations](https://coinmarketcap.com)
+- [Litecoin (LTC)](https://litecoin.org/) - [core](https://github.com/litecoin-project/litecoin) (*C++*)
 
 Applications
 
