@@ -281,6 +281,70 @@ Bitcoin mining has a unnecessary step -> spend money on power and equipment (the
 
 Still open question, see the [news](http://virtualmining.com/).
 
+## Week 8
+
+Bitcoin as a Platform
+
+### Append-only Log
+
+Secure timestamping (hash commitments)
+
+- Proof of knowledge
+- Proof of receipt
+- Hash-based signature schemes
+- ~~Proof of clairvoyance~~ (requires proving no multiple predictions)
+
+Timestamping in Bitcoin
+
+- public key `->` hash of data `->` unspendable UXTO
+- [CommitCoin](https://eprint.iacr.org/2011/677.pdf), no UXTO but low data rate
+- provably unspendable commitments (scripts) - not standard Tx, might poison the blockchain
+- [Omni](http://www.omnilayer.org/) (formerly [MasterCoin](https://en.wikipedia.org/wiki/Mastercoin)) - overlay currency with more features/APIs
+
+*Secure Multi-Party Lotteries* [pdf](https://eprint.iacr.org/2013/784.pdf)
+
+Randomness (fair) and forced to pay `->` **timed** hash commitments
+
+- Pros: implemented on Bitcoin
+- Cons: `O(N^2)` with `MULTISIG` \& time-locked tx, also requires `bonds > bet`
+
+### Smart Property
+
+> Every Bitcoin* carries a history (thus not fungible).
+
+[Colored coins](https://en.bitcoin.it/wiki/Colored_Coins) \& [Open Assets protocol](https://github.com/OpenAssets/open-assets-protocol) - metadata on Bitcoin
+
+- stock certificates
+- tickets
+- ownership of domain names
+
+### Public Randomness Protocal
+
+Blockchain as a crytographic randomness beacon. `p(nonce) = 1/d and d > 2^66` - cost of manipulation: Bernoulli trials - discarding `1/p - 1` blocks (25 BTC) to achieve outcome with probability `p`
+
+- Pros: fully decentralized, beacons every 10 min
+- Cons: imprecise timing, delay to ensure no forks, might be to cheap for some application (e.g., NBA drafts)
+
+:bulb: Built-in beacon support in script - add an opcode for a beacon call `->` simplified multi-party lotteries
+
+### [Prediction Market](https://en.wikipedia.org/wiki/Prediction_market)
+
+Assertions about the outside world - [Reality Keys](https://www.realitykeys.com/)
+
+Decentralized order books - [Predictious](https://www.predictious.com/)
+
+- submit orders to miners, let them match *any* possible trade
+- spread is retained as a transaction fee (no front-running)
+
+**Bitcoin is not enough.**
+
+to build|-
+|---|---|
+payment|ok
+settlement|no trades
+arbitration|trusted arbiter only
+order books|must be external
+
 ## Misc
 
 Altcoins/Alternate cryptocurrencies:
