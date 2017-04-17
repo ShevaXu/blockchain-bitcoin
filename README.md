@@ -345,12 +345,78 @@ settlement|no trades
 arbitration|trusted arbiter only
 order books|must be external
 
+## Week 10
+
+[Altcoin](http://altcoins.com/) - Alternate cryptocurrencies, bitcoin alternatives
+
+- Easy - fork, modify and announce
+- Hard - bootstraping interest
+	- pre-mine
+	- pre-sale
+	- proof-of-burn
+	- airdrop ([Auroracoin](https://en.wikipedia.org/wiki/Auroracoin) story)
+	- pump-and-dump cycle/attack
+- Pros: competition leads to better system (new features)
+- Cons: harm the whole cryptocurrency ecosystem (dividing mining power `->` weak security)
+
+### History
+
+Bitcoin `->` [Namecoin](https://namecoin.org/) (first fork) `->` 
+667 currencies in total, 3 this month (updated 2017.4, see the [map](http://mapofcoins.com/bitcoin) for more)
+
+[Market Capitalizations](https://coinmarketcap.com)| 20170416
+---|---
+Market Cap| $28,720,624,074
+24h Vol| $397,871,692
+BTC Dominance| 66.8%
+
+- better/different security (mining puzzle)
+- contract/platform features
+- parameters & monetary policy
+- community or common interest support
+
+*Namecoin* - First altcoin (Apr. 2011), featured domain name registration ([wiki](https://en.wikipedia.org/wiki/Namecoin))
+
+> Bitcoin frees money – Namecoin frees DNS, identities, and other technologies.
+
+[*Litecoin* (LTC)](https://litecoin.org/) - merory-hard mining puzzle launched in Sep. 2011 ([core](https://github.com/litecoin-project/litecoin) in *C++*)
+
+[*Peercoin*](https://peercoin.net/) (Aug. 2012) - first proof-of-stake algorithm (also uses regularly published "checkpoints")
+
+[*Dogecoin*](http://dogecoin.com/) (Dec. 2013) - tipping, charity & sponsorship culture with *random block rewards* (removed Mar. 2014)
+
+Comparison metrics
+
+- Market cap `prcie * total #coins`
+- Exchange volume
+- Total hashpower
+- Merchant support and usage
+
+> Bitcoin and Altcoins compete and interact supportively and destructively.
+
+Mining attacks - even a small mining pool on a large network (e.g. Bitcoin) can demolish a small altcoin.
+
+*Merge mining* [spec](https://en.bitcoin.it/wiki/Merged_mining_specification)
+
+Originarily, mining is exclusive - just include the *merkel root* of Altcoin block `scriptSig: alt header` (even without explicit support from Bitcoin)
+
+- easier to recruit, but also cheaper for attackers
+- many mining pools merge-mine serveral coins
+
+[Atomic cross-chain swaps/trading](https://en.bitcoin.it/wiki/Atomic_cross-chain_trading) `BTC <-> LTC` - deposit, refund & reveal (neither or both tx complete)
+
+Bitcoin to Altcoin
+
+- "Grandfather": all BTC holders get one (no risk)
+- Unilateral exchange: burn BTC, get ALT (full risk)
+
+Side-chain
+
+- Altcoins that hold Bitcoin in reverse (smooth Altcoin launch risk)
+- Requires changes of Bitcoin to support (tx that describe Altcoin's validation rules)
+- Could be merge-mined (or alternative puzzle)
+
 ## Misc
-
-Altcoins/Alternate cryptocurrencies:
-
-- [Market Capitalizations](https://coinmarketcap.com)
-- [Litecoin (LTC)](https://litecoin.org/) - [core](https://github.com/litecoin-project/litecoin) (*C++*)
 
 Applications
 
