@@ -416,11 +416,88 @@ Side-chain
 - Requires changes of Bitcoin to support (tx that describe Altcoin's validation rules)
 - Could be merge-mined (or alternative puzzle)
 
+## Week 11
+
+The block chain as a vehicle for decentralization - smart property
+
+- Representation - how to encode complex tx into the block chain
+- Atomicity - how to couple the actions of the various parties
+
+Integration Route `#1` - directly on Bitcoin
+
+- easy to deploy
+- limited repr and atom
+
+Route `#2` - embedding (colored coins, Mastercoin)
+
+- complex repr plus security (of Bitcoin)
+- limited scripting and atom, and unwanted tx
+
+Route `#3` - side chains (merge mined)
+
+- avoid polluting blockchain
+- requires Bitcoin modification
+
+Route `#4` - Altcoins
+
+- [Ethereum](https://www.ethereum.org/)
+	- general framework for ledger-based consensus
+	- Turing-complete script
+	- pay for miner computation using "gas"
+
+Level of (de)centralization
+
+- single mandatory intermediary
+- multiple competing intermediaries (freedom to choose mediator; anyone can start a decentralized prediction market)
+- "threshold" of intermediaries (2-out-of-3 escrow/`MULTISIG`)
+- no intermediary (disintermidiation)
+
+Improving security
+
+- reputation
+- escrow & dispute mediation
+- atomic exchange
+- trusted hardware
+
+> Decentralize everything!
+
+- Purely digital things
+	- name mapping
+	- storage
+	- pay for proof
+	- random number
+	- lotteries
+- Things can be represented digitally: currencies, stocks & other assets
+- Property ownership and trade
+- Complex contracts: crowd funding, financial derivatives
+- Markets and auctions (decentralized matching by broadcasting partially completed tx to P2P network)
+- Data feeds: allow arbiters to assert facts (big incentives to lie)
+- Autonomous agents
+- Exchanges
+	- pairs of friend pre-declare debt willingness
+	- triangular debt cancellation means actual settlement may be rare (*liquidity*)
+
+decentralization|what|level|integration|security
+---|---|---|---|---
+smart property|property ownership & trading|disintermidiation|Bitcoin| atomity
+decentralized prediction markets|prediction markets|competition|Altcoin| atomity
+[StorJ](https://storj.io/)|file storage and retrieval| competition|Bitcoin|reputation
+Zerocoin|mixing| disintermidiation|Altcoin| atomity
+[Ripple](https://ripple.com/)| currency exchange|disintermidiation |Altcoin|transitive trust
+
 ## Misc
 
-Applications
+News
 
-* [Ethereum](https://www.ethereum.org/) - decentralized platform that runs smart contracts. (Official Go implementation of the Ethereum [protocol](https://github.com/ethereum/go-ethereum).
+* https://news.bitcoin.com/
+* https://bitcoinmagazine.com/
+* https://www.cryptocoinsnews.com/
+* http://www.bitcoin86.com/news/ [CN]
+* http://www.8btc.com/ [CN]
+* http://news.blockchain.hk/ [CN]
+
+More applications
+
 * [IPFS](https://ipfs.io/) - A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 * [Matrix](http://matrix.org/) - An open network for secure, decentralized communication.
 * [MaidSafe](https://maidsafe.net/) - Safe network.
@@ -430,10 +507,11 @@ Applications
 
 Codes
 
-* https://github.com/lhartikk/naivechain (JS) - See this [blog](https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54#.4mdlna763).
-* https://github.com/IBM-Blockchain/learn-chaincode (Go) - Learn how to write chaincode.
-* https://github.com/chain/chain (Go) - Chain Core Developer Edition.
-
-Info APIs
+repo|desp|lang
+---|---|---
+https://github.com/ethereum/go-ethereum|Official Go implementation of the Ethereum protocol|Go
+https://github.com/lhartikk/naivechain|see this [blog](https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54#.4mdlna763)|JS
+https://github.com/IBM-Blockchain/learn-chaincode|Learn how to write chaincode|Go
+https://github.com/chain/chain|Chain Core Developer Edition|Go
 
 * https://bitcoinchain.com/api REST, network status \& block info
