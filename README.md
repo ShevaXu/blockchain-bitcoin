@@ -4,7 +4,13 @@
 
 This is my notes for taking the course [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency/home) by Princeton University since 2017-02-20.
 
-## Week 4
+## W1 - Intro to Crypto and Cryptocurrencies
+
+## W2 - How Bitcoin Achieves Decentralization
+
+## W3 - Mechanics of Bitcoin
+
+## W4 - How to Store and Use Bitcoins
 
 > How to store & use ~~bitcoin~~ secret key
 
@@ -68,7 +74,7 @@ Where to buy bitcoin :moneybag:
 - online market: http://bitcoincharts.com/markets/
 - p2p (https://localbitcoins.com/) and meetups
 
-## Week 5
+## W5 - Bitcoin Mining
 
 Bitcoin mining in 6 steps:
 
@@ -128,7 +134,7 @@ Game-theoritic, strategic decisions:
 
 > Miners are free to implement any strategy but little non-default behaviours in the wild so far.
 
-## Week 6
+## W6 - Bitcoin and Anonymity
 
 `anonymity = pseudonymity + unlinkability`
 
@@ -184,7 +190,7 @@ Mix chain|Mix|Side channels, bad mixes/peers|Bitcoin-compatible
 Zerocoin|Cryptographic mix|Side channel (possibly)|Altcoin
 Zerocash|Untraceable|None|Altcoin, tricky setup
 
-## Week 7
+## W7 - Community, Politics, and Regulation
 
 Consensus about:
 
@@ -228,7 +234,7 @@ Regulation can address the failure of market (e.g. [Lemons market](https://en.wi
 
 [BitLicense](https://en.wikipedia.org/wiki/BitLicense) of New York came into effect on August 8, 2015.
 
-## Week 8
+## W8 - Alternative Mining Puzzles
 
 Puzzle requirements:
 
@@ -281,9 +287,7 @@ Bitcoin mining has a unnecessary step -> spend money on power and equipment (the
 
 Still open question, see the [news](http://virtualmining.com/).
 
-## Week 8
-
-Bitcoin as a Platform
+## W9 - Bitcoin as a Platform
 
 ### Append-only Log
 
@@ -345,7 +349,7 @@ settlement|no trades
 arbitration|trusted arbiter only
 order books|must be external
 
-## Week 10
+## W10 - Altcoins and the Cryptocurrency Ecosystem
 
 [Altcoin](http://altcoins.com/) - Alternate cryptocurrencies, bitcoin alternatives
 
@@ -416,7 +420,7 @@ Side-chain
 - Requires changes of Bitcoin to support (tx that describe Altcoin's validation rules)
 - Could be merge-mined (or alternative puzzle)
 
-## Week 11
+## W11 - The Future of Bitcoin?
 
 The block chain as a vehicle for decentralization - smart property
 
@@ -485,12 +489,15 @@ decentralized prediction markets|prediction markets|competition|Altcoin| atomity
 Zerocoin|mixing| disintermidiation|Altcoin| atomity
 [Ripple](https://ripple.com/)| currency exchange|disintermidiation |Altcoin|transitive trust
 
+*Update*: The great Bitcoin scaling problem - *BU vs. SegWit* [explained](https://cointelegraph.com/explained/bitcoin-scaling-problem-explained)
+
 ## Misc
 
 News
 
 * https://news.bitcoin.com/
 * https://bitcoinmagazine.com/
+* http://www.coindesk.com/
 * https://www.cryptocoinsnews.com/
 * http://www.bitcoin86.com/news/ [CN]
 * http://www.8btc.com/ [CN]
@@ -504,6 +511,7 @@ More applications
 * [Syncthing](https://syncthing.net/) - Open Source Continuous File Synchronization.
 * [WebTorrent](https://webtorrent.io/) - Torrents on the web.
 * [ZeroNet](https://github.com/HelloZeroNet/ZeroNet) - Decentralized websites using Bitcoin crypto and BitTorrent network.
+* [OpenBazaar](https://openbazaar.org/) - A free market for all.
 
 Codes
 
