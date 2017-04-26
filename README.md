@@ -3,8 +3,59 @@
 ![bitcoin](https://cdn.rawgit.com/ShevaXu/blockchain-bitcoin/master/images/bitcoin-logo.svg)
 
 This is my notes for taking the course [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency/home) by Princeton University since 2017-02-20.
+More resources [here](https://piazza.com/princeton/spring2015/btctech/resources).
 
 ## W1 - Intro to Crypto and Cryptocurrencies
+
+### Cryptographic Hash Funcitons
+
+- take any string as input
+- fixed-size output
+- efficiently computable
+
+**Collision-free**: nobody *can* find `x` and `y` s.t. `x!=y` and `H(x)=H(y)` (collision do exists) - hash as a message digest
+
+**Hiding**: given `H(x)` it is infeasible to find `x`; or if `r` is chosen from a high min-entropy distribution (very spread out), then given `H(r|x)` it is infeasible to find `x`
+
+Commitment API:
+
+- To seal *msg* in envelop: `(com, key) := commit(msg)`, then publish `com` - `(H(key|msg), key)` where `key` is a random 256-bit
+- To open evelop: publish `key, msg`, anyone can `verify(com, key, msg) := (H(key|msg) == com)` to check validity
+
+**Puzzle-friendly**: for every possible `y` if `r` is chosen from a high min-entropy distribution then it is infeasible to find `x` s.t. `H(r|x) = y`
+
+- search puzzle: given `y` from high min-entropy and target-set `Y`, try to find `x` s.t. `H(y|x) \in Y`
+- no solving strategy is much better than trying random values of `x`
+
+[SHA-256](https://en.wikipedia.org/wiki/SHA-2)
+
+![sha-256](./images/sha-256.png)
+
+#### Hash Pointers
+
+> linked list with hash pointers = "block chain"
+
+binary tree with hash pointers = "Merkle tree"
+
+![merkle-tree](./images/merkle-tree.png)
+
+### Digital Signatures
+
+API
+
+```
+(sk, pk) := generateKeys(keySize)
+sig := sign(sk, msg)
+isValid := verify(pk, msg, sig) // verify(pk, message, sign(sk, message)) == true
+```
+
+Bitcoin uses [Elliptic Curve Digital Signature Algorithm (ECDSA)](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
+
+#### Public Keys as Identities
+
+`pk` says, "[msg]".
+
+These identities are called "addresses" in Bitcoin.
 
 ## W2 - How Bitcoin Achieves Decentralization
 
