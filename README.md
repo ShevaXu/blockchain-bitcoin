@@ -137,6 +137,71 @@ Mining economics: `block reward + Tx fees - mining cost = profit`
 
 ## W3 - Mechanics of Bitcoin
 
+Field|	Description|	Size
+---|---|---
+Magic no|	value always 0xD9B4BEF9	|4 bytes
+Blocksize|	number of bytes following up to end of block|4 bytes
+Blockheader|	[6 fields](https://en.bitcoin.it/wiki/Block_hashing_algorithm)|	80 bytes
+Transaction counter|	positive integer [VI = VarInt](https://en.bitcoin.it/wiki/Protocol_documentation#Variable_length_integer)|1 - 9 bytes
+transactions|	the (non empty) list of transactions|`<Transaction counter>`-many transactions
+
+[Bitcoin transcations](https://en.bitcoin.it/wiki/Transaction) (image from https://en.bitcoin.it/wiki)
+
+![tx-binary](./images/tx.png)
+
+Example Tx: [79de785f40d0797a53ef72b8986cfd426591b64b11f0c36cd8df1c652b109b30](https://blockchain.info/tx/79de785f40d0797a53ef72b8986cfd426591b64b11f0c36cd8df1c652b109b30) (randomly picked; alternative [explorer](https://blockexplorer.com/))
+
+#### [Bitcoin Scripts](https://en.bitcoin.it/wiki/Script)
+
+- Simple, compact
+- Support for cryptography
+- Stack-based
+- Limits on time/memory
+- No looping
+
+### P2P Network
+
+- Ad-hoc protocol (runs on TCP port 8333)
+- Ad-hoc network with random topology
+- All nodes are equal
+- New nodes can join at any time
+- Forget non-responding nodes after 3 hr
+
+*Fully-validating nodes*
+
+- Permanently connected
+- Store entire block chain
+- Hear and forward every node/transaction 
+- Track the UTXO set (Unspent Transaction Output, everything else on disk)
+
+*Thin/SPV clients (not fully-validating)*
+
+- Store block headers only
+- Request transactions as needed (to verify incoming payment)
+- Trust fully-validating nodes
+- 1000x cost savings
+
+### Limitations 
+
+Hard-coded limits in Bitcoin
+
+1. 10 min. average creation time per block
+2. 1 M bytes in a block (`>250` bytes/transaction  )
+3. 20,000 signature operations per block
+4. 100 M [*satoshis*](https://en.bitcoin.it/wiki/Satoshi_(unit)) per bitcoin
+5. 21M total bitcoins maximum
+
+Throughput limit: 1 M bytes/block (10 min) & `>250` bytes/transaction `->` 7 Txs/sec :disappointed:
+
+Cryptographic limit: only 1 signature algorithm (ECDSA/P256)
+
+- "Hard-forking" changes: old nodes will never catch up
+	- New op codes
+	- Changes to size limits
+	- Changes to mining rate
+	- Many small bug fixes
+- Soft forks: add new features which only limit the set of valid transactions (need majority of nodes to enforce new rules), e.g. [Pay to script hash (P2SH)](https://en.bitcoin.it/wiki/Pay_to_script_hash)
+
 ## W4 - How to Store and Use Bitcoins
 
 > How to store & use ~~bitcoin~~ secret key
