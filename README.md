@@ -59,6 +59,82 @@ These identities are called "addresses" in Bitcoin.
 
 ## W2 - How Bitcoin Achieves Decentralization
 
+Centralization vs. decentralization: decentralization is not all-or-nothing (e.g., email, decentralized protocol, but centralized webmail services)
+
+> Bitcoin has three types of consensus: *value, state and rules.
+
+1. Who maintains the ledger?
+2. Who has authority over which transactions are valid?
+3. Who creates new bitcoins?
+4. Who determines how the rules of the system change?
+5. How do bitcoins acquire exchange value?
+
+#### Distributed consensus
+
+> Bitcoin is a peer-to-peer system.
+
+At any given time:
+
+- All nodes have a sequence of blocks of transactions
+they’ve reached consensus on
+- Each node has a set of outstanding transactions it’s
+heard about
+
+*Why consensus is hard?* 
+
+- Nodes may crash or may be malicious; network is imperfect
+- [Byzantine Generals' Problem](https://en.wikipedia.org/wiki/Byzantine_fault_tolerance)
+- [Paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science)) protocals
+
+*Bitcoin consensus works better in practice than in theory.*
+
+- Introduces incentives
+- Embraces randomness (consensus over long time)
+
+#### Consensus without identity: the block chain
+
+- Identity is hard in a P2P system — [Sybil attack](https://en.wikipedia.org/wiki/Sybil_attack)
+- Pseudonymity is a goal of Bitcoin
+
+:bulb: Implicit consensus
+
+1. New transactions are broadcast to all nodes
+2. Each node collects new transactions into a block
+3. In each round a **random** node gets to broadcast its block
+4. Other nodes accept the block only if all transactions in it are valid (unspent, valid signatures)
+5. Nodes express their acceptance of the block by including its hash in the next block they create
+
+#### Incentive 1: block reward
+
+Creator of block gets to (the block has to end up on long-term consensus branch)
+
+- include special coin-creation transaction in the block
+- choose recipient address of this transaction
+
+Value is fixed: currently 25 BTC, halves every 4 years (total *21 million* till 2040)
+
+#### Incentive 2: transaction fees
+
+- Creator of transaction can choose to make output value less than input value
+- Remainder is a transaction fee and goes to block creator
+- Purely voluntary, like a tip
+
+#### Proof of work
+
+Select nodes in proportion to computing power (let nodes compete for right to create block)
+
+![hash-puzzles](./images/hash-puzzles.png)
+
+- difficult: as of Aug 2014 `~10^20` hashes/block
+- parameterizable: nodes automatically re-calculate the target every two weeks `->` average time between blocks = 10 minutes
+- trivial to verify: `nouce` published as part of the block and miners verify `H(nonce||prev_hash|| tx||...||tx) < target`
+
+Mining economics: `block reward + Tx fees - mining cost = profit`
+
+> Bitcoin is bootstrapped.
+
+![consensus](./images/consensus.png)
+
 ## W3 - Mechanics of Bitcoin
 
 ## W4 - How to Store and Use Bitcoins
