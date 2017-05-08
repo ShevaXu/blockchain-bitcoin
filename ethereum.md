@@ -4,8 +4,6 @@ https://www.ethereum.org/
 
 ## Intro
 
-*This is mostly excerpt from [A gentle introduction to Ethereum](https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/).*
-
 > What Bitcoin does for distributed data storage, Ethereum does for distributed data storage plus computations.
 
 -|Description|Decentralization
@@ -77,4 +75,40 @@ Serenity is intended to have two major feature sets: [abstraction](https://blog.
 
 ## Smart Contracts
 
-https://bitsonblocks.net/2016/02/01/a-gentle-introduction-to-smart-contracts/
+Smart contracts are:
+
+- pre-written logic (computer code),
+- stored and replicated on a distributed storage platform (eg a blockchain),
+- executed/run by a network of computers (usually the same ones running the blockchain),
+- and can result in ledger updates (cryptocurrency payments, etc).
+
+> If this happens then do that
+
+#### Languages
+
+- **Solidity** – similar to the language Javascript. This is currently the most popular and functional smart contract scripting language. ([*C++* source](https://github.com/ethereum/solidity) and [doc](https://solidity.readthedocs.io))
+- *Serpent* (like Python) and *LLL* (Lisp Like Language) are only used in the early days.
+
+### Gas
+
+When you activate a smart contract, you ask all the miners in the whole network to each individually perform the calculations within it by paying a small amount of ETH:
+
+```
+Payment (in ETH) = Gas amount (in Gas) x Gas price (in ETH/Gas)
+```
+
+- *Gas amount*: the more complex the smart contract (the number and type of computational steps, memory used for storage, etc), then the more Gas the contract requires to run and complete;
+- *Gas Price*: Whereas the amount of Gas to run a contract is fixed for any specific contract, as determined by the complexity of the contract, the Gas Price is specified by the person who wants the contract to run, at the time they request it (a bit like Bitcoin transaction fees). Each miner will look at how generous the gas price is, and will determine whether they want to run the contract as part of the block. If you want miners to run your contract, you offer a high Gas Price. In this way it’s a competitive auction driven by how much someone is willing to pay to have a contract run.
+
+*Why Gas?*
+
+Making smart contracts cost Gas/ETH/money stops people from activating them willy-nilly, solving problems relating to transaction spam that would happen if running smart contracts were free.
+
+## Misc
+
+### Refs
+
+Excerpt from:
+
+- *[A gentle introduction to Ethereum](https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/)*
+- *[A gentle introduction to smart contracts](https://bitsonblocks.net/2016/02/01/a-gentle-introduction-to-smart-contracts/)*
