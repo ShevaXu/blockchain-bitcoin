@@ -1,6 +1,8 @@
 # Ethereum
 
-https://www.ethereum.org/
+[Ethereum](https://www.ethereum.org/) and its founder [Vitalik Buterin](https://en.wikipedia.org/wiki/Vitalik_Buterin) (image from coinfox).
+
+![buterin](http://www.coinfox.info/images/buterin111.jpg)
 
 ## Intro
 
@@ -73,6 +75,12 @@ Serenity is intended to have two major feature sets: [abstraction](https://blog.
 
 *Note*: [Ghost](https://github.com/ethereum/wiki/wiki/White-Paper#modified-ghost-implementation) protocol (Greedy Heaviest-Observed Sub-Tree)
 
+#### ETH vs. Ethereum Classic (ETC)
+
+[Why are There Now Two Ethereums?](http://www.investopedia.com/articles/investing/080516/why-are-there-now-two-ethereums.asp)
+
+In short, a hacker found an exploit in TheDao's (Decentralized Autonomous Organization) smart contract code and stole tens of millions of dollars worth of Ethereum's virtual currency, which led to an unprescedented hard fork in the Ethereum blockchain in July 2015 that effectively reversed the transactions.
+
 ## Smart Contracts
 
 Smart contracts are:
@@ -103,6 +111,25 @@ Payment (in ETH) = Gas amount (in Gas) x Gas price (in ETH/Gas)
 *Why Gas?*
 
 Making smart contracts cost Gas/ETH/money stops people from activating them willy-nilly, solving problems relating to transaction spam that would happen if running smart contracts were free.
+
+## Software
+
+### [Geth](https://github.com/ethereum/go-ethereum)
+
+COMMAND LINE TOOLS FOR THE ETHEREUM NETWORK.
+
+```
+$ geth [--testnet] --fast --cache=512 console
+```
+
+This command will:
+
+ * Start geth in fast sync mode (`--fast`), causing it to download more data in exchange for avoiding processing the entire history of the Ethereum network, which is very CPU intensive.
+ * Bump the memory allowance of the database to 512MB (`--cache=512`), which can help significantly in sync times especially for HDD users. This flag is optional and you can set it as high or as low as you'd like, though we'd recommend the 512MB - 2GB range.
+ * Start up Geth's built-in interactive [JavaScript console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console), (via the trailing `console` subcommand) through which you can invoke all official [`web3` methods](https://github.com/ethereum/wiki/wiki/JavaScript-API) as well as Geth's own [management APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs). This too is optional and if you leave it out you can always attach to an already running Geth instance with `geth --attach`.
+ * `--testnet` flag connects to the test network instead, which uses different P2P bootnodes, different network IDs and genesis states (no *real-money*, play-Ether only).
+
+`geth help` for more CLI [options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options).
 
 ## Misc
 
