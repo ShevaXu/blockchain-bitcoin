@@ -4,6 +4,12 @@
 
 ![buterin](http://www.coinfox.info/images/buterin111.jpg)
 
+I like this simple explanation from [*What The Fuck Is Ethereum?*](http://whatthefuckisethereum.com/), when explain it like *I'm five*:
+
+> Ethereum is a way for a bunch of computers to talk to each other. People can ask these computers to run programs that can't easily be shut down because all the computers share the code with each other.
+>
+> If you want to run a program that takes a long time to finish, you have to pay the computers in the network a currency called Ether.
+
 ## Intro
 
 > What Bitcoin does for distributed data storage, Ethereum does for distributed data storage plus computations.
@@ -94,8 +100,9 @@ Smart contracts are:
 
 #### Languages
 
-- **Solidity** – similar to the language Javascript. This is currently the most popular and functional smart contract scripting language. ([*C++* source](https://github.com/ethereum/solidity) and [doc](https://solidity.readthedocs.io))
+- **Solidity** – similar to the language Javascript. This is currently the most popular and functional smart contract scripting language. ([*C++* source](https://github.com/ethereum/solidity), [doc](https://solidity.readthedocs.io)) and tutorials [ethereumdev.io](https://ethereumdev.io/)
 - *Serpent* (like Python) and *LLL* (Lisp Like Language) are only used in the early days.
+- [Viper](https://github.com/ethereum/viper) - New experimental programming language.
 
 ### Gas
 
@@ -131,7 +138,15 @@ This command will:
 
 `geth help` for more CLI [options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options).
 
+The Ethereum Improvement Proposal ([EIPs](https://github.com/ethereum/EIPs)).
+
 ## Misc
+
+### News
+
+2017-07-21: [*A hacker stole $31M of Ether — how it happened, and what it means for Ethereum*](https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce)
+
+> First, remember, this was not a flaw in Ethereum or in smart contracts in general. Rather, it was a developer error in a particular contract.
 
 ### Refs
 
@@ -139,3 +154,7 @@ Excerpt from:
 
 - *[A gentle introduction to Ethereum](https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/)*
 - *[A gentle introduction to smart contracts](https://bitsonblocks.net/2016/02/01/a-gentle-introduction-to-smart-contracts/)*
+
+Ecosystem:
+
+- [Mist](https://github.com/ethereum/mist) browser - tool of choice to browse and use [Ðapps](http://dapps.ethercasts.com/) (read [*How to build server less applications for Mist*](https://blog.ethereum.org/2016/07/12/build-server-less-applications-mist/))
