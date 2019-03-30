@@ -9,6 +9,7 @@
 * http://www.bitcoin86.com/news/ [CN]
 * http://www.8btc.com/ [CN]
 * http://news.blockchain.hk/ [CN]
+* https://designforblockchain.net: A Curated list of articles about design solutions for blockchain and cryptocurrency products.
 
 ### Applications
 
